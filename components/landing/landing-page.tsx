@@ -262,7 +262,7 @@ export function LandingPage() {
             <SectionLabel>Nossos cursos</SectionLabel>
             <div className="flex flex-col gap-2.5">
               <LinkRow
-                href="/cursos/redacao"
+                href="/curso-redacao"
                 icon={User}
                 label="Redação (Professora Martinha)"
               />
