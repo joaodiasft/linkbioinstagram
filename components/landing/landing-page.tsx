@@ -294,7 +294,7 @@ export function LandingPage() {
                 label="Resultados"
               />
               <LinkRow
-                href="/cursos/exatas"
+                href="/destaques"
                 icon={Star}
                 label="Destaques"
               />
@@ -305,12 +305,12 @@ export function LandingPage() {
             <SectionLabel>Onde estamos e fale conosco</SectionLabel>
             <div className="flex flex-col gap-2.5">
               <LinkRow
-                href="https://maps.google.com/?q=Reda%C3%A7%C3%A3o+Nota+Mil"
+                href="/localizacao"
                 icon={MapPin}
                 label="Localização"
               />
               <LinkRow
-                href="mailto:contato@redacaonotamil.com.br"
+                href="/contatos"
                 icon={MessageSquare}
                 label="Nossos Contatos"
               />
