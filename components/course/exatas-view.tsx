@@ -18,6 +18,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { MatriculaWhatsAppCta } from "@/components/ui/matricula-cta";
 import {
   CourseHeaderBack,
   CourseShell,
@@ -63,7 +64,9 @@ export function ExatasView() {
           Metodologia &quot;Mil Anos&quot; para quem busca engenharia e medicina: base
           sólida, simulados semanais e correção individualizada.
         </p>
-        <GradientCtaButton href="#matricular-exatas">Matricular-se Agora</GradientCtaButton>
+        <MatriculaWhatsAppCta className="font-manrope inline-flex w-full items-center justify-center rounded-[26px] bg-gradient-primary px-6 py-4 text-center text-[15px] font-semibold text-white shadow-card-lg transition hover:brightness-105 active:scale-[0.98]">
+          Matricular-se Agora
+        </MatriculaWhatsAppCta>
         <a
           href="#cronograma"
           className="mt-4 block text-center font-manrope text-sm font-semibold text-brand-pink underline underline-offset-4 hover:text-brand-cta"

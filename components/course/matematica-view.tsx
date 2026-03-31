@@ -13,12 +13,8 @@ import {
   Sparkles,
   User,
 } from "lucide-react";
-import {
-  CourseHeaderBack,
-  CourseShell,
-  GradientCtaButton,
-  SectionLineTitle,
-} from "./shell";
+import { MatriculaWhatsAppCta } from "@/components/ui/matricula-cta";
+import { CourseHeaderBack, CourseShell, SectionLineTitle } from "./shell";
 
 const modulos = [
   {
@@ -213,7 +209,9 @@ export function MatematicaView() {
             Garanta acesso completo e suporte até o dia da prova.
           </p>
           <div className="mb-3">
-            <GradientCtaButton href="#matricula-mat">Começar agora</GradientCtaButton>
+            <MatriculaWhatsAppCta className="font-manrope inline-flex w-full items-center justify-center rounded-[26px] bg-gradient-primary px-6 py-4 text-center text-[15px] font-semibold text-white shadow-card-lg transition hover:brightness-105 active:scale-[0.98]">
+              Começar agora
+            </MatriculaWhatsAppCta>
           </div>
           <Link
             href="/"

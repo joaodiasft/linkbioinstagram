@@ -8,6 +8,7 @@ import {
   Users,
 } from "lucide-react";
 import { CourseHeaderBack, CourseShell } from "@/components/course/shell";
+import { MatriculaWhatsAppCta } from "@/components/ui/matricula-cta";
 
 const plans = [
   {
@@ -108,10 +109,8 @@ export default function PlanosPage() {
               <p className="pb-1 text-sm text-brand-muted line-through">{plan.oldPrice}</p>
             </div>
 
-            <a
-              href="https://wa.me/5562981899570"
-              target="_blank"
-              rel="noopener noreferrer"
+            <MatriculaWhatsAppCta
+              loadingClassName="mt-5"
               className={`font-manrope mt-5 inline-flex w-full items-center justify-center rounded-2xl px-4 py-3 text-sm font-semibold shadow-card transition ${
                 plan.featured
                   ? "bg-gradient-primary text-white hover:brightness-105"
@@ -119,7 +118,7 @@ export default function PlanosPage() {
               }`}
             >
               {plan.cta}
-            </a>
+            </MatriculaWhatsAppCta>
           </article>
         ))}
       </section>
@@ -135,14 +134,13 @@ export default function PlanosPage() {
         <p className="mt-2 text-sm text-brand-muted">
           Na contratação de dois cursos, a taxa de matrícula é isenta.
         </p>
-        <a
-          href="https://wa.me/5562981899570"
-          target="_blank"
-          rel="noopener noreferrer"
+        <MatriculaWhatsAppCta
+          loadingClassName="mt-4"
           className="font-manrope mt-4 inline-flex w-full items-center justify-center rounded-2xl bg-gradient-primary px-5 py-3.5 text-sm font-semibold text-white shadow-card-lg"
+          closedHrefLabel="Falar com a equipe"
         >
           Falar com atendimento
-        </a>
+        </MatriculaWhatsAppCta>
       </section>
 
       <nav

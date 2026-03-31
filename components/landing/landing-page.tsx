@@ -24,6 +24,7 @@ import {
   Wallet,
 } from "lucide-react";
 import { IconInstagram, IconYoutube } from "@/components/landing/social-icons";
+import { MatriculaWhatsAppCta } from "@/components/ui/matricula-cta";
 import type { LucideIcon } from "lucide-react";
 
 const container = {
@@ -176,7 +177,8 @@ export function LandingPage() {
           className="mb-8 rounded-[22px] bg-gradient-primary px-4 py-3.5 text-center shadow-card"
         >
           <p className="text-[14px] font-semibold leading-snug text-white">
-            Matrículas para 2026 abertas! Aproveite preços únicos.
+            Matrículas pelo botão abaixo: disponíveis do dia 1 ao 5 de cada
+            mês (horário de Brasília).
           </p>
         </motion.div>
 
@@ -207,23 +209,28 @@ export function LandingPage() {
 
         {/* Primary CTAs */}
         <div className="mb-10 flex flex-col gap-3">
-          <motion.a
-            href="/cursos/redacao"
+          <motion.div
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
-            className="font-manrope flex w-full items-center justify-between gap-3 rounded-[26px] bg-gradient-primary px-4 py-4 text-white shadow-card-lg transition hover:brightness-105"
+            className="w-full"
           >
-            <span className="flex items-center gap-3">
-              <motion.span
-                animate={{ rotate: [0, -8, 8, 0] }}
-                transition={{ duration: 1.8, repeat: Infinity, repeatDelay: 2.5 }}
-              >
-                <List className="h-5 w-5 shrink-0" strokeWidth={2.25} />
-              </motion.span>
-              <span className="text-[16px] font-bold">Matrículas Abertas</span>
-            </span>
-            <ChevronRight className="h-5 w-5 shrink-0" strokeWidth={2.5} />
-          </motion.a>
+            <MatriculaWhatsAppCta className="font-manrope flex w-full items-center justify-between gap-3 rounded-[26px] bg-gradient-primary px-4 py-4 text-white shadow-card-lg transition hover:brightness-105">
+              <span className="flex items-center gap-3">
+                <motion.span
+                  animate={{ rotate: [0, -8, 8, 0] }}
+                  transition={{
+                    duration: 1.8,
+                    repeat: Infinity,
+                    repeatDelay: 2.5,
+                  }}
+                >
+                  <List className="h-5 w-5 shrink-0" strokeWidth={2.25} />
+                </motion.span>
+                <span className="text-[16px] font-bold">Matrículas Abertas</span>
+              </span>
+              <ChevronRight className="h-5 w-5 shrink-0" strokeWidth={2.5} />
+            </MatriculaWhatsAppCta>
+          </motion.div>
 
           <motion.a
             href="/bolsa"

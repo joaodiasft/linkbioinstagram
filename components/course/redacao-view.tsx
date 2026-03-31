@@ -11,12 +11,8 @@ import {
   Trophy,
   Users,
 } from "lucide-react";
-import {
-  CourseHeaderBack,
-  CourseShell,
-  GradientCtaButton,
-  SectionLineTitle,
-} from "./shell";
+import { MatriculaWhatsAppCta } from "@/components/ui/matricula-cta";
+import { CourseHeaderBack, CourseShell, SectionLineTitle } from "./shell";
 
 const destaques = [
   "Aulas práticas com foco total nas competências do ENEM.",
@@ -105,9 +101,9 @@ export function RedacaoView() {
       </section>
 
       <section id="matricula-red" className="mb-24">
-        <GradientCtaButton href="mailto:contato@redacaonotamil.com.br">
+        <MatriculaWhatsAppCta className="font-manrope inline-flex w-full items-center justify-center rounded-[26px] bg-gradient-primary px-6 py-4 text-center text-[15px] font-semibold text-white shadow-card-lg transition hover:brightness-105 active:scale-[0.98]">
           Quero entrar agora
-        </GradientCtaButton>
+        </MatriculaWhatsAppCta>
         <Link
           href="/curso-redacao"
           className="font-manrope mt-3 inline-flex w-full items-center justify-center gap-1 text-sm font-semibold text-brand-pink"

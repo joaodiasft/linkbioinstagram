@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { BadgeCheck, FileText, GraduationCap, Sparkles, Target, UserCheck, Wallet } from "lucide-react";
 import { CourseHeaderBack, CourseShell, SectionLineTitle } from "@/components/course/shell";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { BolsaFormCta } from "@/components/ui/matricula-cta";
 
 export default function BolsaPage() {
   return (
@@ -111,14 +112,11 @@ export default function BolsaPage() {
       </section>
 
       <section id="inscricao" className="mb-24">
-        <a
-          href="https://forms.gle/Dhz1PFwEcDw9s5fp8"
-          target="_blank"
-          rel="noopener noreferrer"
+        <BolsaFormCta
           className="font-manrope inline-flex w-full items-center justify-center rounded-[26px] bg-gradient-primary px-6 py-4 text-center text-[15px] font-semibold text-white shadow-card-lg transition hover:brightness-105 active:scale-[0.98]"
         >
           Iniciar minha qualificação agora
-        </a>
+        </BolsaFormCta>
         <Link
           href="/planos"
           className="font-manrope mt-3 block text-center text-sm font-semibold text-brand-pink"

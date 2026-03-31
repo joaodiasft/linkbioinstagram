@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { BookOpen, Clock3, Home, MessageCircle } from "lucide-react";
 import { CourseHeaderBack, CourseShell } from "@/components/course/shell";
+import { MatriculaWhatsAppCta } from "@/components/ui/matricula-cta";
 
 export default function TurmasPage() {
   return (
@@ -108,15 +109,13 @@ export default function TurmasPage() {
         <p className="mt-3 text-sm text-brand-muted">
           Envie uma mensagem e te ajudamos na melhor turma para o seu momento.
         </p>
-        <a
-          href="https://wa.me/5562981899570"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="font-manrope mt-4 inline-flex items-center gap-2 text-sm font-semibold text-brand-pink underline underline-offset-4"
+        <MatriculaWhatsAppCta
+          loadingClassName="mt-4"
+          className="font-manrope mt-4 inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-gradient-primary px-4 py-3 text-sm font-semibold text-white shadow-card-lg transition hover:brightness-105"
         >
           <MessageCircle className="h-4 w-4" />
-          Falar no WhatsApp
-        </a>
+          Matricular pelo WhatsApp
+        </MatriculaWhatsAppCta>
       </section>
 
       <nav
