@@ -1,12 +1,12 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Manrope, Outfit } from "next/font/google";
+import { Manrope, Plus_Jakarta_Sans, Sora } from "next/font/google";
 import "./globals.css";
 import { FloatingWhatsapp } from "@/components/ui/floating-whatsapp";
 
-const inter = Inter({
+const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-inter",
+  variable: "--font-jakarta",
 });
 
 const manrope = Manrope({
@@ -15,8 +15,7 @@ const manrope = Manrope({
   variable: "--font-manrope",
 });
 
-/* Visual geométrico próximo a Croogla; substitua por localFont(Croogla 4F) se tiver licença */
-const heading = Outfit({
+const heading = Sora({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-heading",
@@ -42,9 +41,9 @@ export default function RootLayout({
   return (
     <html
       lang="pt-BR"
-      className={`${inter.variable} ${manrope.variable} ${heading.variable}`}
+      className={`${jakarta.variable} ${manrope.variable} ${heading.variable}`}
     >
-      <body className={`${inter.className} antialiased`}>
+      <body className={`${jakarta.className} antialiased`}>
         {children}
         <FloatingWhatsapp />
       </body>

@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Accessibility, Car, Clock3, MapPin, Train, User, BusFront } from "lucide-react";
+import { Car, Clock3, MapPin, Train, User, BusFront } from "lucide-react";
 import { CourseHeaderBack, CourseShell } from "@/components/course/shell";
 
 export default function LocalizacaoPage() {
@@ -17,22 +17,23 @@ export default function LocalizacaoPage() {
           Nossa <span className="text-brand-pink">Sede</span>
         </h1>
         <p className="mt-4 text-sm leading-relaxed text-brand-muted">
-          Um espaço projetado para alto rendimento acadêmico, localizado no coração
-          de São Paulo, pronto para receber os futuros nota mil.
+          Estamos em Goiânia, em uma unidade preparada para aulas presenciais com
+          conforto, fácil acesso e estrutura de estudo.
         </p>
       </section>
 
       <section className="mb-6 rounded-[24px] border border-brand-line bg-white p-4 shadow-card">
-        <div className="mb-4 rounded-[20px] bg-brand-surface p-4">
-          <div className="relative aspect-[4/5] rounded-2xl bg-[linear-gradient(135deg,#eceaf0,#d9d6df)]">
-            <span className="absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 items-center gap-2 rounded-full bg-white px-3 py-1 text-[11px] font-semibold text-brand-pink shadow-card">
-              <MapPin className="h-3.5 w-3.5" />
-              REDAÇÃO NOTA MIL
-            </span>
-          </div>
+        <div className="mb-4 overflow-hidden rounded-[20px] border border-brand-line">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d584.9725256740177!2d-49.33003271776306!3d-16.617601248148098!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935ef559fa1c3b25%3A0xcf4219c72fa4abcc!2zQ3Vyc28gUmVkYcOnw6NvIE5vdGEgTWlsIEdvacOibmlh!5e0!3m2!1spt-BR!2sbr!4v1774981256076!5m2!1spt-BR!2sbr"
+            title="Mapa da Redação Nota Mil"
+            className="h-[300px] w-full border-0"
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
         </div>
         <a
-          href="https://maps.google.com/?q=Paulista+1000+Sao+Paulo"
+          href="https://maps.app.goo.gl/jsKaQLFwsA4wCScE7"
           target="_blank"
           rel="noopener noreferrer"
           className="font-manrope inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-gradient-primary px-4 py-3 text-sm font-semibold text-white"
@@ -48,18 +49,18 @@ export default function LocalizacaoPage() {
         </div>
         <h2 className="font-heading text-2xl text-brand-premium">Endereço</h2>
         <p className="mt-2 text-sm text-brand-muted">
-          Av. Paulista, 1000
+          Rua F, R. L-01, Qd.159
           <br />
-          Bela Vista, São Paulo - SP
+          Goiânia - GO, 74475-060
           <br />
-          CEP: 01310-100
+          Plus Code: 9MJC+W2 Goiânia, Goiás
         </p>
         <div className="mt-4 border-t border-dashed border-brand-line pt-3">
           <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-brand-muted">
             Ponto de referência
           </p>
           <p className="mt-1 text-sm text-brand-muted">
-            Próximo ao metrô Trianon-Masp e ao MASP.
+            Referência no Google Maps: Curso Redação Nota Mil Goiânia.
           </p>
         </div>
       </section>
@@ -70,45 +71,45 @@ export default function LocalizacaoPage() {
           <li className="rounded-2xl bg-brand-surface p-3">
             <p className="font-heading flex items-center gap-2 text-base text-brand-premium">
               <Train className="h-4 w-4 text-brand-pink" />
-              Metrô
+              Transporte urbano
             </p>
-            <p className="mt-1 text-sm text-brand-muted">Linha Verde, estação Trianon-Masp.</p>
+            <p className="mt-1 text-sm text-brand-muted">
+              Acesso por terminais e linhas integradas da região.
+            </p>
           </li>
           <li className="rounded-2xl bg-brand-surface p-3">
             <p className="font-heading flex items-center gap-2 text-base text-brand-premium">
               <BusFront className="h-4 w-4 text-brand-pink" />
               Ônibus
             </p>
-            <p className="mt-1 text-sm text-brand-muted">Corredor da Av. Paulista, diversos ônibus.</p>
+            <p className="mt-1 text-sm text-brand-muted">Linhas que passam pela região da unidade.</p>
           </li>
           <li className="rounded-2xl bg-brand-surface p-3">
             <p className="font-heading flex items-center gap-2 text-base text-brand-premium">
               <Car className="h-4 w-4 text-brand-pink" />
               Carro
             </p>
-            <p className="mt-1 text-sm text-brand-muted">Acesso pela Rua Augusta com estacionamento próximo.</p>
+            <p className="mt-1 text-sm text-brand-muted">Acesso fácil com estacionamento próximo.</p>
           </li>
         </ul>
       </section>
 
       <section className="mb-24 rounded-[24px] border border-brand-line bg-white p-4 shadow-card">
-        <div className="rounded-2xl bg-brand-surface p-3">
-          <p className="font-heading flex items-center justify-between text-base text-brand-premium">
-            <span className="flex items-center gap-2">
-              <Clock3 className="h-4 w-4 text-brand-pink" />
-              Horário de Funcionamento
-            </span>
-          </p>
-          <p className="mt-2 text-sm text-brand-muted">Segunda a Sexta: 08:00 - 21:00</p>
-          <p className="text-sm text-brand-muted">Sábado: 09:00 - 14:00</p>
-        </div>
-        <div className="mt-3 grid grid-cols-2 gap-2">
-          <div className="rounded-xl bg-brand-roseSoft p-3 text-sm text-brand-premium">Estacionamento</div>
-          <div className="rounded-xl bg-brand-roseSoft p-3 text-sm text-brand-premium">
-            <span className="inline-flex items-center gap-1">
-              <Accessibility className="h-4 w-4 text-brand-pink" />
-              Acessibilidade
-            </span>
+        <h2 className="font-heading flex items-center gap-2 text-2xl text-brand-premium">
+          <Clock3 className="h-5 w-5 text-brand-pink" />
+          Horário de Funcionamento
+        </h2>
+        <div className="mt-3 space-y-2">
+          <div className="rounded-xl bg-brand-surface p-3 text-sm text-brand-muted">Segunda-feira: 08:00 às 21:00</div>
+          <div className="rounded-xl bg-brand-surface p-3 text-sm text-brand-muted">Terça-feira: 08:00 às 21:00</div>
+          <div className="rounded-xl bg-brand-surface p-3 text-sm text-brand-muted">Quarta-feira: 08:00 às 22:00</div>
+          <div className="rounded-xl bg-brand-surface p-3 text-sm text-brand-muted">Quinta-feira: 08:00 às 21:00</div>
+          <div className="rounded-xl bg-brand-surface p-3 text-sm text-brand-muted">
+            Sexta-feira (feriado pode variar): 08:00 às 21:00
+          </div>
+          <div className="rounded-xl bg-brand-surface p-3 text-sm text-brand-muted">Sábado: 08:00 às 21:00</div>
+          <div className="rounded-xl bg-brand-surface p-3 text-sm text-brand-muted">
+            Domingo (Páscoa): Fechado
           </div>
         </div>
       </section>

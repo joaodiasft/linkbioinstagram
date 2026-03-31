@@ -25,7 +25,6 @@ import {
 import {
   CourseHeaderBack,
   CourseShell,
-  GradientCtaButton,
   SectionLineTitle,
 } from "@/components/course/shell";
 
@@ -306,14 +305,6 @@ export default function CursoRedacaoPage() {
           constante e conteúdos completos, este é o lugar certo para a sua
           preparação.
         </p>
-        <div className="mt-4">
-          <GradientCtaButton
-            href="/cursos/redacao#matricula-red"
-            className="!bg-white !text-brand-pink"
-          >
-            Matrículas abertas - Quero minha vaga
-          </GradientCtaButton>
-        </div>
       </section>
 
       <nav className="fixed bottom-0 left-0 right-0 z-40 flex justify-center border-t border-brand-line bg-white/95 pb-[env(safe-area-inset-bottom)] shadow-nav backdrop-blur-md">

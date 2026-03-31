@@ -12,6 +12,9 @@
   .bg-gradient-dark-elegant {
     background-image: linear-gradient(135deg, #c70a74 0%, #e50d89 55%, #ff6abd 100%);
   }
+  .text-soft {
+    color: color-mix(in srgb, var(--foreground) 72%, #ffffff);
+  }
 }
 
 @layer base {
@@ -92,8 +95,16 @@
   }
   body {
     @apply bg-background text-foreground;
+    letter-spacing: -0.01em;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
   html {
     @apply font-sans;
+  }
+  ::selection {
+    background: color-mix(in srgb, var(--primary) 20%, #ffffff);
+    color: var(--foreground);
   }
 }

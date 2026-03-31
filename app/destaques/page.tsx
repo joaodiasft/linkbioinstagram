@@ -1,12 +1,28 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, Star, User, Users } from "lucide-react";
+import { Quote, Sparkles, Star, User, Users } from "lucide-react";
 import { CourseHeaderBack, CourseShell } from "@/components/course/shell";
 
 const depoimentos = [
-  { nome: "Lucas Santos", curso: "Medicina", texto: "Perdi o medo dos temas. A base que recebi aqui foi essencial para minha aprovação." },
-  { nome: "Ana Costa", curso: "Direito", texto: "A correção detalhada fez toda diferença para subir de 760 para 940 pontos." },
+  {
+    nome: "Marta Oliveira",
+    curso: "Editado 2 meses atrás",
+    texto:
+      "Minha filha fez o Curso Redação Nota Mil com a professora Martinha e teve ótimas aprovações nas universidades. Passou na UEG em 8º lugar em Arquitetura e Urbanismo e ficou no cadastro de reserva da UFG em 4º lugar. O espaço do curso é organizado, amplo e arejado. O atendimento é exemplar, e a professora é Nota 1000.",
+  },
+  {
+    nome: "Amandda",
+    curso: "Aprovada em Letras - UEG",
+    texto:
+      "Entrei em 2025 no curso preparatório com muitas dificuldades na escrita e, com nove meses de curso, garanti minha aprovação em Letras na UEG. Também melhorei minhas notas na escola graças à didática da professora Martha e hoje escrevo com muito mais facilidade.",
+  },
+  {
+    nome: "Maria Luiza Mendes",
+    curso: "Aluna 900+ | ENEM 2024: 940",
+    texto:
+      "Antes do curso, eu tinha dificuldade para organizar minhas ideias e manter a estrutura adequada do texto. Tudo mudou quando comecei as aulas. A professora é didática, paciente e explica de forma clara. Os materiais são completos e as correções detalhadas. Hoje escrevo com segurança, domínio e consciência do que é exigido.",
+  },
 ];
 
 export default function DestaquesPage() {
@@ -16,22 +32,24 @@ export default function DestaquesPage() {
 
       <section className="mb-6">
         <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.16em] text-brand-muted">
-          Arquivo de conquistas
+          Destaques
         </p>
         <h1 className="font-heading text-[42px] leading-[0.95] text-brand-premium">
-          Vozes que
+          Relatos que
           <br />
-          Alcançaram o Mil
+          <span className="text-brand-pink">emocionam.</span>
         </h1>
       </section>
 
-      <section className="mb-7 rounded-[24px] border border-brand-line bg-white p-4 shadow-card">
-        <div className="mb-4 aspect-[4/5] rounded-2xl bg-gradient-primary" />
-        <h2 className="font-heading text-2xl text-brand-premium">Mariana Silva</h2>
-        <p className="text-sm text-brand-muted">Aprovada em Medicina na USP</p>
-        <blockquote className="mt-3 rounded-xl bg-brand-surface p-3 text-sm italic text-brand-muted">
-          “A metodologia do curso transformou minha forma de estruturar o pensamento.”
-        </blockquote>
+      <section className="mb-7 rounded-[24px] bg-gradient-primary p-5 text-white shadow-card-lg">
+        <p className="inline-flex items-center gap-2 rounded-full bg-white/15 px-3 py-1 text-xs font-semibold uppercase tracking-wide">
+          <Sparkles className="h-4 w-4" />
+          Relatos reais
+        </p>
+        <h2 className="font-heading mt-3 text-2xl">Quem estuda aqui, evolui de verdade</h2>
+        <p className="mt-2 text-sm text-white/90">
+          Relatos reais de transformação, aprovação e confiança na escrita.
+        </p>
       </section>
 
       <section className="mb-8">
@@ -44,50 +62,25 @@ export default function DestaquesPage() {
         <div className="space-y-3">
           {depoimentos.map((d) => (
             <article key={d.nome} className="rounded-[20px] border border-brand-line bg-white p-4 shadow-card">
-              <p className="font-heading text-base text-brand-premium">{d.nome}</p>
+              <Quote className="h-4 w-4 text-brand-pink" />
+              <p className="mt-2 font-heading text-base text-brand-premium">{d.nome}</p>
               <p className="text-xs text-brand-muted">{d.curso}</p>
-              <p className="mt-2 text-sm text-brand-muted">{d.texto}</p>
+              <p className="mt-3 text-sm leading-relaxed text-brand-muted">{d.texto}</p>
               <p className="mt-2 text-brand-pink">★★★★★</p>
             </article>
           ))}
         </div>
       </section>
-
-      <section className="mb-8 rounded-[24px] border border-brand-line bg-white p-4 shadow-card">
-        <h3 className="font-heading text-xl text-brand-premium">Histórias de Superação</h3>
-        <article className="mt-4 border-t border-brand-line pt-3">
-          <p className="font-heading text-lg text-brand-premium">A Jornada do Zero ao Mil</p>
-          <p className="mt-1 text-sm text-brand-muted">
-            João evoluiu com nosso método e conquistou a nota máxima.
-          </p>
-          <a href="#" className="mt-2 inline-flex items-center gap-1 text-sm font-semibold text-brand-pink">
-            Leia a história completa <ArrowRight className="h-4 w-4" />
-          </a>
-        </article>
-        <article className="mt-4 border-t border-brand-line pt-3">
-          <p className="font-heading text-lg text-brand-premium">Conciliando Trabalho e Sonhos</p>
-          <p className="mt-1 text-sm text-brand-muted">
-            Ana conquistou aprovação estudando com carga horária enxuta.
-          </p>
-          <a href="#" className="mt-2 inline-flex items-center gap-1 text-sm font-semibold text-brand-pink">
-            Leia a história completa <ArrowRight className="h-4 w-4" />
-          </a>
-        </article>
-      </section>
-
-      <section className="mb-24">
-        <h3 className="font-heading mb-3 text-xl text-brand-premium">Galeria de Conquistas</h3>
-        <div className="grid grid-cols-2 gap-2">
-          <div className="aspect-square rounded-xl bg-brand-roseSoft" />
-          <div className="aspect-square rounded-xl bg-brand-roseSoft" />
-          <div className="aspect-square rounded-xl bg-brand-roseSoft" />
-          <div className="aspect-square rounded-xl bg-brand-roseSoft" />
-        </div>
+      <section className="mb-24 rounded-[24px] border border-brand-line bg-white p-4 shadow-card">
+        <h3 className="font-heading text-xl text-brand-premium">Quer ser o próximo destaque?</h3>
+        <p className="mt-2 text-sm text-brand-muted">
+          Fale com nossa equipe, conheça as turmas e inicie sua evolução agora.
+        </p>
         <Link
           href="/contatos"
-          className="font-manrope mt-4 inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-gradient-primary px-4 py-3 text-sm font-semibold text-white shadow-card-lg"
+          className="font-manrope mt-4 inline-flex w-full items-center justify-center rounded-2xl bg-gradient-primary px-4 py-3 text-sm font-semibold text-white shadow-card-lg"
         >
-          Seja o próximo destaque <ArrowRight className="h-4 w-4" />
+          Falar com a equipe
         </Link>
       </section>
 

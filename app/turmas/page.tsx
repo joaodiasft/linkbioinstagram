@@ -1,51 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { useMemo, useState } from "react";
-import { BookOpen, CalendarRange, Clock3, Home, MessageCircle, Users } from "lucide-react";
+import { BookOpen, Clock3, Home, MessageCircle } from "lucide-react";
 import { CourseHeaderBack, CourseShell } from "@/components/course/shell";
 
-type Turno = "Todos" | "Manhã" | "Tarde" | "Noite";
-const turnos: Turno[] = ["Todos", "Manhã", "Tarde", "Noite"];
-
-const turmas = [
-  {
-    id: "redacao-master",
-    curso: "Redação Master: Medicina",
-    badge: "Língua | Alta demanda",
-    descricao: "Foco total em repertório, estrutura e redações semanais.",
-    professor: "Prof. Marcos",
-    horario: "Segunda e Quarta · 19:30",
-    turno: "Noite" as Turno,
-  },
-  {
-    id: "exatas-enem",
-    curso: "Exatas para o ENEM",
-    badge: "Exatas | Regular",
-    descricao: "Matemática e Física com treino constante em questões.",
-    professor: "Prof. Guilherme",
-    horario: "Terça e Quinta · 09:00",
-    turno: "Manhã" as Turno,
-  },
-  {
-    id: "linguagens-arte",
-    curso: "Linguagens & Arte",
-    badge: "Humanas | Vagas abertas",
-    descricao: "Leitura crítica, interpretação e análise de repertório.",
-    professor: "Prof. Amanda",
-    horario: "Sábado · 14:00",
-    turno: "Tarde" as Turno,
-  },
-] as const;
-
 export default function TurmasPage() {
-  const [tab, setTab] = useState<Turno>("Todos");
-
-  const filtradas = useMemo(() => {
-    if (tab === "Todos") return turmas;
-    return turmas.filter((turma) => turma.turno === tab);
-  }, [tab]);
-
   return (
     <CourseShell>
       <CourseHeaderBack title="Redação Nota Mil" />
@@ -55,120 +14,108 @@ export default function TurmasPage() {
           Matrículas abertas
         </p>
         <h1 className="font-heading text-[44px] leading-[0.95] text-brand-premium">
-          Encontre sua{" "}
-          <span className="italic text-brand-pink">Turma ideal.</span>
+          Turmas 2026
+          <span className="italic text-brand-pink"> por curso.</span>
         </h1>
         <p className="mt-4 max-w-[350px] text-sm leading-relaxed text-brand-muted">
-          Selecione o turno e escolha a melhor turma para sua rotina. Vagas
-          limitadas para garantir acompanhamento individual.
+          Grade oficial com opções para Ensino Fundamental e Médio. Caso tenha
+          dúvida sobre nível ou disponibilidade, nossa equipe te orienta.
         </p>
       </section>
 
-      <section className="mb-6 flex gap-2 overflow-x-auto pb-1">
-        {turnos.map((turno) => (
-          <button
-            key={turno}
-            type="button"
-            onClick={() => setTab(turno)}
-            className={`min-w-[88px] rounded-xl border px-3 py-2 text-xs font-semibold transition ${
-              tab === turno
-                ? "border-brand-pink bg-brand-roseSoft text-brand-pink"
-                : "border-brand-line bg-white text-brand-muted hover:bg-brand-roseSoft/60"
-            }`}
-          >
-            {turno}
-          </button>
-        ))}
-      </section>
-
-      <section className="space-y-3">
-        {filtradas.map((turma) => (
-          <article
-            key={turma.id}
-            className="rounded-[26px] border border-brand-line bg-white p-5 shadow-card"
-          >
-            <div className="mb-3 flex items-center justify-between gap-3">
-              <span className="rounded-full bg-brand-roseSoft px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide text-brand-pink">
-                {turma.badge}
-              </span>
-              <CalendarRange className="h-4 w-4 text-brand-muted" />
-            </div>
-
-            <h2 className="font-heading text-3xl leading-[1.02] text-brand-premium">
-              {turma.curso}
-            </h2>
-            <p className="mt-3 text-sm text-brand-muted">{turma.descricao}</p>
-
-            <div className="mt-4 space-y-2 text-xs text-brand-muted">
-              <p className="flex items-center gap-2">
-                <Users className="h-3.5 w-3.5 text-brand-pink" />
-                {turma.professor}
-              </p>
-              <p className="flex items-center gap-2">
-                <Clock3 className="h-3.5 w-3.5 text-brand-pink" />
-                {turma.horario}
-              </p>
-            </div>
-
-            <a
-              href="#garantir-vaga"
-              className="font-manrope mt-5 inline-flex w-full items-center justify-center rounded-2xl bg-gradient-primary px-4 py-3 text-sm font-semibold text-white shadow-card-lg hover:brightness-105"
-            >
-              Garantir vaga
-            </a>
-          </article>
-        ))}
-      </section>
-
-      <section
-        id="detalhes-workshop"
-        className="my-9 overflow-hidden rounded-[26px] border border-brand-line bg-white p-3 shadow-card scroll-mt-24"
-      >
-        <div className="aspect-[16/7] rounded-[20px] bg-[linear-gradient(135deg,#97b07f,#7f9867)]" />
-        <div className="p-2 pt-4">
-          <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-brand-muted">
-            Laboratório criativo e imersivo
+      <section className="space-y-4">
+        <article className="rounded-[26px] border border-brand-line bg-white p-5 shadow-card">
+          <h2 className="font-heading text-2xl text-brand-premium">Redação</h2>
+          <p className="mt-1 text-xs font-semibold uppercase tracking-wide text-brand-pink">
+            Ensino médio
           </p>
-          <h3 className="font-heading mt-1 text-2xl leading-tight text-brand-premium">
-            Workshop de Argumentação
-          </h3>
+          <ul className="mt-3 space-y-2 text-sm text-brand-muted">
+            <li className="flex items-center gap-2">
+              <Clock3 className="h-4 w-4 text-brand-pink" /> R1 - terça - 18h às
+              19h30
+            </li>
+            <li className="flex items-center gap-2">
+              <Clock3 className="h-4 w-4 text-brand-pink" /> R2 - terça - 19h30 às
+              21h
+            </li>
+            <li className="flex items-center gap-2">
+              <Clock3 className="h-4 w-4 text-brand-pink" /> R3 - sábado - 07h30 às
+              09h
+            </li>
+            <li className="flex items-center gap-2">
+              <Clock3 className="h-4 w-4 text-brand-pink" /> R4 - sábado - 09h às
+              10h30
+            </li>
+          </ul>
+
+          <p className="mt-4 text-xs font-semibold uppercase tracking-wide text-brand-pink">
+            Ensino fundamental
+          </p>
+          <ul className="mt-3 space-y-2 text-sm text-brand-muted">
+            <li className="flex items-start gap-2">
+              <Clock3 className="mt-0.5 h-4 w-4 shrink-0 text-brand-pink" /> R5 -
+              sábado - 10h30 às 12h - 6º e 7º ano
+            </li>
+            <li className="flex items-start gap-2">
+              <Clock3 className="mt-0.5 h-4 w-4 shrink-0 text-brand-pink" /> R6 -
+              sábado - 15h00 às 16h30 - 8º e 9º ano
+            </li>
+          </ul>
+        </article>
+
+        <article className="rounded-[26px] border border-brand-line bg-white p-5 shadow-card">
+          <h2 className="font-heading text-2xl text-brand-premium">Exatas</h2>
+          <ul className="mt-3 space-y-2 text-sm text-brand-muted">
+            <li className="flex items-center gap-2">
+              <Clock3 className="h-4 w-4 text-brand-pink" /> EX1 - segunda - 19h às
+              22h
+            </li>
+          </ul>
+        </article>
+
+        <article className="rounded-[26px] border border-brand-line bg-white p-5 shadow-card">
+          <h2 className="font-heading text-2xl text-brand-premium">Matemática</h2>
+          <p className="mt-1 text-xs font-semibold uppercase tracking-wide text-brand-pink">
+            Ensino médio
+          </p>
+          <p className="mt-2 text-sm text-brand-muted">Ainda a definir.</p>
+          <p className="mt-4 text-xs font-semibold uppercase tracking-wide text-brand-pink">
+            Ensino fundamental
+          </p>
+          <ul className="mt-3 space-y-2 text-sm text-brand-muted">
+            <li className="flex items-center gap-2">
+              <Clock3 className="h-4 w-4 text-brand-pink" /> M2 - quinta - 18h40 às
+              19h40
+            </li>
+          </ul>
+        </article>
+
+        <article className="rounded-[26px] border border-brand-line bg-white p-5 shadow-card">
+          <h2 className="font-heading text-2xl text-brand-premium">Intensivo de férias</h2>
           <p className="mt-2 text-sm text-brand-muted">
-            4 encontros exclusivos para destravar repertório e aumentar nota da
-            competência 2.
+            Turma em abertura. Em breve divulgaremos cronograma, vagas e valores.
           </p>
-          <div className="mt-4 grid grid-cols-2 gap-2">
-            <a
-              href="#detalhes-workshop"
-              className="font-manrope rounded-xl border border-brand-line bg-brand-roseSoft px-3 py-2 text-center text-xs font-semibold text-brand-premium"
-            >
-              Ver detalhes
-            </a>
-            <a
-              href="#garantir-vaga"
-              className="font-manrope rounded-xl border border-brand-line bg-white px-3 py-2 text-center text-xs font-semibold text-brand-muted"
-            >
-              Me avisar
-            </a>
-          </div>
-        </div>
+        </article>
       </section>
 
       <section
         id="garantir-vaga"
-        className="mb-24 rounded-[26px] border border-brand-line bg-white p-5 shadow-card"
+        className="mb-24 mt-8 rounded-[26px] border border-brand-line bg-white p-5 shadow-card"
       >
         <h3 className="font-heading text-3xl leading-tight text-brand-premium">
-          Não encontrou o horário ideal?
+          Quer reservar sua vaga?
         </h3>
         <p className="mt-3 text-sm text-brand-muted">
-          Fale com nossa equipe e montamos uma turma personalizada para você.
+          Envie uma mensagem e te ajudamos na melhor turma para o seu momento.
         </p>
         <a
-          href="mailto:contato@redacaonotamil.com.br"
+          href="https://wa.me/5562981899570"
+          target="_blank"
+          rel="noopener noreferrer"
           className="font-manrope mt-4 inline-flex items-center gap-2 text-sm font-semibold text-brand-pink underline underline-offset-4"
         >
           <MessageCircle className="h-4 w-4" />
-          Falar com Consultor
+          Falar no WhatsApp
         </a>
       </section>
 

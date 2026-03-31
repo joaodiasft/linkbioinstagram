@@ -75,7 +75,7 @@ const config: Config = {
         linktree: "520px",
       },
       fontFamily: {
-        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
+        sans: ["var(--font-jakarta)", "system-ui", "sans-serif"],
         manrope: ["var(--font-manrope)", "system-ui", "sans-serif"],
         heading: ["var(--font-heading)", "system-ui", "sans-serif"],
       },

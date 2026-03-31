@@ -19,7 +19,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import {
-  CourseHeaderLogoMenu,
+  CourseHeaderBack,
   CourseShell,
   GradientCtaButton,
   SectionLineTitle,
@@ -49,7 +49,7 @@ const modules = [
 export function ExatasView() {
   return (
     <CourseShell>
-      <CourseHeaderLogoMenu />
+      <CourseHeaderBack title="Curso de Exatas" />
 
       <section className="mb-10">
         <span className="mb-3 inline-block rounded-full bg-brand-roseSoft px-3 py-1 font-manrope text-[11px] font-semibold uppercase tracking-wider text-brand-pink">
