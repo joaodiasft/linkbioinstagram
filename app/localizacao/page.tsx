@@ -74,7 +74,8 @@ export default function LocalizacaoPage() {
               Transporte urbano
             </p>
             <p className="mt-1 text-sm text-brand-muted">
-              Acesso por terminais e linhas integradas da região.
+              Integração com o BRT e terminais da região Leste — inclusive Terminal Recanto do
+              Bosque e Terminal Padre Pelágio — com correspondência para linhas alimentadoras.
             </p>
           </li>
           <li className="rounded-2xl bg-brand-surface p-3">
@@ -82,14 +83,46 @@ export default function LocalizacaoPage() {
               <BusFront className="h-4 w-4 text-brand-pink" />
               Ônibus
             </p>
-            <p className="mt-1 text-sm text-brand-muted">Linhas que passam pela região da unidade.</p>
+            <p className="mt-1 text-sm text-brand-muted">
+              Na região da sede (Leste / Carolina Park), a RMTC costuma atender com a{" "}
+              <strong className="font-semibold text-brand-premium">linha 307</strong> (corredor
+              Goiânia Viva — Carolina Park e trechos adjacentes). Para chegar pelos terminais,
+              há ligações como as linhas{" "}
+              <strong className="font-semibold text-brand-premium">143</strong> e{" "}
+              <strong className="font-semibold text-brand-premium">146</strong> (Terminal Padre
+              Pelágio ↔ Terminal Recanto do Bosque), permitindo combinar com o trecho até a
+              unidade.
+            </p>
+            <p className="mt-2 text-xs text-brand-muted">
+              Confira parada e itinerário atualizados no app{" "}
+              <span className="font-semibold text-brand-premium">SiMRmtc</span> ou em{" "}
+              <a
+                href="https://www.rmtcgoiania.com.br/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-brand-pink underline underline-offset-2"
+              >
+                rmtcgoiania.com.br
+              </a>
+              .
+            </p>
           </li>
           <li className="rounded-2xl bg-brand-surface p-3">
             <p className="font-heading flex items-center gap-2 text-base text-brand-premium">
               <Car className="h-4 w-4 text-brand-pink" />
               Carro
             </p>
-            <p className="mt-1 text-sm text-brand-muted">Acesso fácil com estacionamento próximo.</p>
+            <p className="mt-1 text-sm text-brand-muted">
+              Acesso com estacionamento próximo. Tempo médio de carro (pode variar com trânsito):{" "}
+              <strong className="font-semibold text-brand-premium">
+                cerca de 30–45 min a partir do Terminal Recanto do Bosque
+              </strong>{" "}
+              e{" "}
+              <strong className="font-semibold text-brand-premium">
+                cerca de 20–35 min a partir do Terminal Padre Pelágio
+              </strong>
+              .
+            </p>
           </li>
         </ul>
       </section>
@@ -99,17 +132,39 @@ export default function LocalizacaoPage() {
           <Clock3 className="h-5 w-5 text-brand-pink" />
           Horário de Funcionamento
         </h2>
-        <div className="mt-3 space-y-2">
-          <div className="rounded-xl bg-brand-surface p-3 text-sm text-brand-muted">Segunda-feira: 08:00 às 21:00</div>
-          <div className="rounded-xl bg-brand-surface p-3 text-sm text-brand-muted">Terça-feira: 08:00 às 21:00</div>
-          <div className="rounded-xl bg-brand-surface p-3 text-sm text-brand-muted">Quarta-feira: 08:00 às 22:00</div>
-          <div className="rounded-xl bg-brand-surface p-3 text-sm text-brand-muted">Quinta-feira: 08:00 às 21:00</div>
+        <p className="mt-3 text-xs font-semibold uppercase tracking-wide text-brand-pink">
+          Horário normal de funcionamento
+        </p>
+        <div className="mt-2 space-y-2">
           <div className="rounded-xl bg-brand-surface p-3 text-sm text-brand-muted">
-            Sexta-feira (feriado pode variar): 08:00 às 21:00
+            Segunda-feira: 08:00 às 21:00
           </div>
-          <div className="rounded-xl bg-brand-surface p-3 text-sm text-brand-muted">Sábado: 08:00 às 21:00</div>
           <div className="rounded-xl bg-brand-surface p-3 text-sm text-brand-muted">
-            Domingo (Páscoa): Fechado
+            Terça-feira: 08:00 às 21:00
+          </div>
+          <div className="rounded-xl bg-brand-surface p-3 text-sm text-brand-muted">
+            Quarta-feira: 08:00 às 22:00
+          </div>
+          <div className="rounded-xl bg-brand-surface p-3 text-sm text-brand-muted">
+            Quinta-feira: 08:00 às 21:00
+          </div>
+          <div className="rounded-xl bg-brand-surface p-3 text-sm text-brand-muted">
+            Sexta-feira: 08:00 às 21:00
+          </div>
+          <div className="rounded-xl bg-brand-surface p-3 text-sm text-brand-muted">
+            Sábado: 08:00 às 21:00
+          </div>
+        </div>
+        <p className="mt-4 text-xs font-semibold uppercase tracking-wide text-brand-pink">
+          Horário não funcional
+        </p>
+        <div className="mt-2 space-y-2">
+          <div className="rounded-xl border border-dashed border-brand-roseLight bg-brand-roseSoft/40 p-3 text-sm text-brand-muted">
+            Domingo: horário não funcional (sem expediente).
+          </div>
+          <div className="rounded-xl border border-dashed border-brand-roseLight bg-brand-roseSoft/40 p-3 text-sm text-brand-muted">
+            Feriados: sem funcionamento — em datas especiais, avisamos com antecedência pelos
+            canais oficiais.
           </div>
         </div>
       </section>

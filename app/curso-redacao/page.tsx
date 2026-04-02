@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import {
@@ -27,6 +28,7 @@ import {
   CourseShell,
   SectionLineTitle,
 } from "@/components/course/shell";
+import { TEACHER_REDACAO } from "@/lib/site-media";
 
 const resultados = [
   { valor: "900+", label: "em notas de destaque" },
@@ -277,6 +279,17 @@ export default function CursoRedacaoPage() {
 
       <section className="mb-8 rounded-[24px] border border-brand-line bg-white p-4 shadow-card">
         <SectionLineTitle className="mb-2">Sobre a professora</SectionLineTitle>
+        <div className="mb-4 flex justify-center">
+          <div className="overflow-hidden rounded-2xl border border-brand-line bg-brand-surface shadow-card">
+            <Image
+              src={TEACHER_REDACAO}
+              alt="Professora Martinha"
+              width={280}
+              height={280}
+              className="h-auto max-h-[220px] w-auto max-w-full object-contain"
+            />
+          </div>
+        </div>
         <h3 className="font-heading text-xl text-brand-premium">
           Professora Martinha
         </h3>

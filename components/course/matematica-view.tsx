@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import {
@@ -15,6 +16,7 @@ import {
 } from "lucide-react";
 import { MatriculaWhatsAppCta } from "@/components/ui/matricula-cta";
 import { CourseHeaderBack, CourseShell, SectionLineTitle } from "./shell";
+import { TEACHER_MATEMATICA } from "@/lib/site-media";
 
 const modulos = [
   {
@@ -76,6 +78,28 @@ export function MatematicaView() {
                 Taxa de aprovação
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="mb-10 rounded-[26px] border border-brand-line bg-white p-5 shadow-card">
+        <SectionLineTitle className="mb-3">Professor</SectionLineTitle>
+        <div className="flex flex-col items-center gap-3 sm:flex-row sm:items-start">
+          <div className="shrink-0 overflow-hidden rounded-2xl border border-brand-line bg-brand-surface">
+            <Image
+              src={TEACHER_MATEMATICA}
+              alt="Professor Michael"
+              width={200}
+              height={200}
+              className="h-40 w-40 object-cover sm:h-44 sm:w-44"
+            />
+          </div>
+          <div>
+            <p className="font-heading text-lg font-bold text-brand-premium">Professor Michael</p>
+            <p className="mt-2 text-sm leading-relaxed text-brand-muted">
+              Condução das aulas de Matemática com foco em ENEM e vestibulares, do raciocínio
+              lógico às provas de elite.
+            </p>
           </div>
         </div>
       </section>

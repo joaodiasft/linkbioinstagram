@@ -25,6 +25,10 @@ export const metadata: Metadata = {
   title: "Redação Nota Mil",
   description:
     "Conquiste sua vaga com a melhor redação do Brasil! Matrículas e informações dos cursos.",
+  icons: {
+    icon: "https://i.ibb.co/fYVC4Ygf/logo.png",
+    apple: "https://i.ibb.co/fYVC4Ygf/logo.png",
+  },
 };
 
 export const viewport: Viewport = {

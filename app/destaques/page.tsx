@@ -1,7 +1,9 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { Quote, Sparkles, Star, User, Users } from "lucide-react";
+import { DESTAQUES_NOTAS_IMAGES } from "@/lib/site-media";
 import { CourseHeaderBack, CourseShell } from "@/components/course/shell";
 
 const depoimentos = [
@@ -50,6 +52,30 @@ export default function DestaquesPage() {
         <p className="mt-2 text-sm text-white/90">
           Relatos reais de transformação, aprovação e confiança na escrita.
         </p>
+      </section>
+
+      <section className="mb-8">
+        <h3 className="font-heading mb-3 text-xl text-brand-premium">Registros e notas</h3>
+        <p className="mb-3 text-sm text-brand-muted">
+          Alguns destaques publicados pelos nossos alunos e pela equipe.
+        </p>
+        <div className="columns-2 gap-3 space-y-3">
+          {DESTAQUES_NOTAS_IMAGES.map((item) => (
+            <div
+              key={item.src}
+              className="break-inside-avoid overflow-hidden rounded-[18px] border border-brand-line bg-white shadow-card"
+            >
+              <Image
+                src={item.src}
+                alt={item.alt}
+                width={480}
+                height={480}
+                className="w-full object-cover"
+                sizes="(max-width: 480px) 50vw, 240px"
+              />
+            </div>
+          ))}
+        </div>
       </section>
 
       <section className="mb-8">

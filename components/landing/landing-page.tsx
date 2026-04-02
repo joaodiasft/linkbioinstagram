@@ -25,6 +25,7 @@ import {
 } from "lucide-react";
 import { IconInstagram, IconYoutube } from "@/components/landing/social-icons";
 import { MatriculaWhatsAppCta } from "@/components/ui/matricula-cta";
+import { LANDING_GALLERY_IMAGES, SITE_LOGO } from "@/lib/site-media";
 import type { LucideIcon } from "lucide-react";
 
 const container = {
@@ -145,13 +146,13 @@ export function LandingPage() {
         {/* Top bar */}
         <header className="mb-4 flex items-center justify-between rounded-[22px] bg-white px-3 py-2.5 shadow-card">
           <div className="flex min-w-0 items-center gap-2.5">
-            <div className="relative h-9 w-9 shrink-0 overflow-hidden rounded-full ring-2 ring-brand-roseLight/80">
+            <div className="relative flex h-9 w-9 shrink-0 items-center justify-center overflow-hidden rounded-2xl bg-brand-roseSoft/60 ring-2 ring-brand-roseLight/80">
               <Image
-                src="/profile.png"
-                alt=""
+                src={SITE_LOGO}
+                alt="Redação Nota Mil"
                 width={36}
                 height={36}
-                className="h-full w-full object-cover"
+                className="h-full w-full object-contain p-0.5"
                 priority
               />
             </div>
@@ -185,13 +186,13 @@ export function LandingPage() {
         {/* Profile */}
         <div className="mb-8 flex flex-col items-center">
           <div className="relative mb-4">
-            <div className="h-[132px] w-[132px] overflow-hidden rounded-full border-[5px] border-brand-pink shadow-card-lg ring-4 ring-white">
+            <div className="flex h-[132px] w-[132px] items-center justify-center overflow-hidden rounded-full border-[5px] border-brand-pink bg-white shadow-card-lg ring-4 ring-white">
               <Image
-                src="/profile.png"
+                src={SITE_LOGO}
                 alt="Redação Nota Mil"
                 width={132}
                 height={132}
-                className="h-full w-full object-cover"
+                className="h-[85%] w-[85%] object-contain"
                 priority
               />
             </div>
@@ -331,6 +332,27 @@ export function LandingPage() {
                 icon={MessageSquare}
                 label="Nossos Contatos"
               />
+            </div>
+          </motion.section>
+
+          <motion.section variants={item}>
+            <SectionLabel>Ambiente e conquistas</SectionLabel>
+            <div className="columns-2 gap-2.5 space-y-2.5">
+              {LANDING_GALLERY_IMAGES.map((src, i) => (
+                <div
+                  key={src}
+                  className="break-inside-avoid overflow-hidden rounded-[18px] border border-brand-line bg-white shadow-card"
+                >
+                  <Image
+                    src={src}
+                    alt={`Galeria Redação Nota Mil ${i + 1}`}
+                    width={400}
+                    height={400}
+                    className="w-full object-cover"
+                    sizes="(max-width: 480px) 50vw, 200px"
+                  />
+                </div>
+              ))}
             </div>
           </motion.section>
         </motion.div>

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import {
@@ -25,6 +26,7 @@ import {
   GradientCtaButton,
   SectionLineTitle,
 } from "./shell";
+import { TEACHER_EXATAS } from "@/lib/site-media";
 
 const modules = [
   {
@@ -78,6 +80,32 @@ export function ExatasView() {
           className="relative mt-8 overflow-hidden rounded-[26px] bg-gradient-to-br from-[#0B1020] to-[#1a1f35] shadow-card-lg"
         >
           <div className="aspect-[4/3] w-full bg-[radial-gradient(circle_at_30%_40%,rgba(59,130,246,0.6),transparent_55%),radial-gradient(circle_at_70%_60%,rgba(236,72,153,0.35),transparent_50%)]" />
+        </div>
+      </section>
+
+      <section className="mb-12 rounded-[26px] border border-brand-line bg-white p-5 shadow-card">
+        <SectionLineTitle className="mb-3">Quem ministra as Exatas</SectionLineTitle>
+        <p className="mb-4 text-sm text-brand-muted">
+          Bruno, Adriano e Marcos — núcleo de Ciências da Natureza e Matemática.
+        </p>
+        <div className="grid grid-cols-3 gap-2">
+          {TEACHER_EXATAS.map((p) => (
+            <div
+              key={p.nome}
+              className="overflow-hidden rounded-2xl border border-brand-line bg-brand-surface"
+            >
+              <Image
+                src={p.src}
+                alt={`Professor ${p.nome}`}
+                width={200}
+                height={200}
+                className="aspect-square w-full object-cover"
+              />
+              <p className="p-2 text-center font-manrope text-[11px] font-semibold text-brand-premium">
+                {p.nome}
+              </p>
+            </div>
+          ))}
         </div>
       </section>
 
